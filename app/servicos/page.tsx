@@ -1,4 +1,5 @@
-import { services } from "../lib/services";
+import ServiceCard from "../../src/components/ServiceCard";
+import { services } from "../../src/lib/services";
 
 export const metadata = { title: "Serviços" };
 
@@ -14,6 +15,12 @@ export default function ServicosPage() {
           para você.
         </p>
       </div>
+
+      <ServiceCard
+        name="Nome do serviço 1"
+        description="Descrição breve do que é esse serviço e para quem se destina."
+        price="R$ 200,00"
+      />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {services.map((s) => (
