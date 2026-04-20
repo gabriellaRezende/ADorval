@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       {/* ── HERO ── */}
-      <section id="home" className="relative w-full h-[90vh] flex items-center justify-center overflow-hidden bg-creme">
+      <section id="home" className="relative w-full h-[90vh] min-h-[520px] flex items-center justify-center overflow-hidden bg-creme">
         <Image
           src="/foto-profissional.jpg"
           alt="Foto da profissional"
@@ -44,11 +44,11 @@ export default function Home() {
       </section>
 
       {/* ── SOBRE ── */}
-      <section id="sobre" className="max-w-3xl mx-auto px-6 py-24 text-center">
+      <section id="sobre" className="max-w-3xl mx-auto px-6 py-14 md:py-24 text-center">
         <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-noite">
           Bem-vindo ao meu espaço!
         </h2>
-        <h2 className="text-2xl md:text-1xl font-regular mb-6 text-suave">
+        <h2 className="text-xl font-normal mb-6 text-suave">
           Me chamo Ana Dorval.
         </h2>
         <p className="text-suave text-lg leading-relaxed">
@@ -60,7 +60,7 @@ export default function Home() {
 
       {/* ── SERVIÇOS ── */}
       <section id="servicos" className="bg-gelo">
-        <div className="max-w-5xl mx-auto px-6 py-20">
+        <div className="max-w-5xl mx-auto px-6 py-12 md:py-20">
           <div className="mb-14 text-center">
             <h2 className="text-3xl md:text-4xl font-semibold text-noite mb-4">
               Serviços
@@ -84,7 +84,7 @@ export default function Home() {
       </section>
 
       {/* ── CONTATO ── */}
-      <section id="contato" className="max-w-4xl mx-auto px-6 py-20">
+      <section id="contato" className="max-w-4xl mx-auto px-6 py-12 md:py-20">
         <div className="mb-14 text-center">
           <h2 className="text-3xl md:text-4xl font-semibold text-noite mb-4">
             Contato

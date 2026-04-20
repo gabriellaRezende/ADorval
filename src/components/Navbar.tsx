@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import { Menu, X } from "lucide-react";
 
 const links = [
   { href: "#home", label: "Home" },
@@ -10,6 +11,7 @@ const links = [
 
 export default function Navbar() {
   const [active, setActive] = useState("");
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const ids = links.map((l) => l.href.slice(1));
@@ -19,7 +21,7 @@ export default function Navbar() {
           if (entry.isIntersecting) setActive("#" + entry.target.id);
         });
       },
-      { rootMargin: "-40% 0px -55% 0px" } // se alterar o 40
+      { rootMargin: "-40% 0px -55% 0px" }
     );
     ids.forEach((id) => {
       const el = document.getElementById(id);
@@ -31,25 +33,52 @@ export default function Navbar() {
   return (
     <header className="w-full border-b border-gelo bg-creme sticky top-0 z-50">
       <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#hero" className="font-semibold text-lg tracking-tight text-noite">
-          Nome da Profissional
+        <a href="#home" className="font-semibold text-lg tracking-tight text-noite">
+          Aqui tem que ir a logo
         </a>
-        <nav className="flex gap-6">
+
+        {/* Desktop */}
+        <nav className="hidden md:flex gap-6">
           {links.map(({ href, label }) => (
             <a
               key={href}
               href={href}
               className={`text-sm transition-colors ${
-                active === href
-                  ? "text-brand font-medium"
-                  : "text-suave hover:text-noite"
+                active === href ? "text-brand font-medium" : "text-suave hover:text-noite"
               }`}
             >
               {label}
             </a>
           ))}
         </nav>
+
+        {/* Mobile — botão hamburger */}
+        <button
+          className="md:hidden text-noite p-1"
+          onClick={() => setMenuOpen((o) => !o)}
+          aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
+        >
+          {menuOpen ? <X size={22} /> : <Menu size={22} />}
+        </button>
       </div>
+
+      {/* Mobile — menu aberto */}
+      {menuOpen && (
+        <nav className="md:hidden border-t border-gelo bg-creme px-6 py-4 flex flex-col gap-5">
+          {links.map(({ href, label }) => (
+            <a
+              key={href}
+              href={href}
+              onClick={() => setMenuOpen(false)}
+              className={`text-base transition-colors ${
+                active === href ? "text-brand font-medium" : "text-suave hover:text-noite"
+              }`}
+            >
+              {label}
+            </a>
+          ))}
+        </nav>
+      )}
     </header>
   );
 }
