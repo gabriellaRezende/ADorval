@@ -1,34 +1,52 @@
 "use client";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const links = [
-  { href: "/", label: "Home" },
-  { href: "/servicos", label: "Serviços" },
-  { href: "/contato", label: "Contato" },
+  { href: "#home", label: "Home" },
+  { href: "#sobre", label: "Sobre" },
+  { href: "#servicos", label: "Serviços" },
+  { href: "#contato", label: "Contato" },
 ];
 
 export default function Navbar() {
-  const pathname = usePathname();
+  const [active, setActive] = useState("");
+
+  useEffect(() => {
+    const ids = links.map((l) => l.href.slice(1));
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActive("#" + entry.target.id);
+        });
+      },
+      { rootMargin: "-40% 0px -55% 0px" } // se alterar o 40
+    );
+    ids.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <header className="w-full border-b border-gray-100 bg-white sticky top-0 z-50">
+    <header className="w-full border-b border-gelo bg-creme sticky top-0 z-50">
       <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="/" className="font-semibold text-lg tracking-tight text-gray-900">
+        <a href="#hero" className="font-semibold text-lg tracking-tight text-noite">
           Nome da Profissional
-        </Link>
+        </a>
         <nav className="flex gap-6">
           {links.map(({ href, label }) => (
-            <Link
+            <a
               key={href}
               href={href}
               className={`text-sm transition-colors ${
-                pathname === href
-                  ? "text-gray-900 font-medium"
-                  : "text-gray-500 hover:text-gray-900"
+                active === href
+                  ? "text-brand font-medium"
+                  : "text-suave hover:text-noite"
               }`}
             >
               {label}
-            </Link>
+            </a>
           ))}
         </nav>
       </div>

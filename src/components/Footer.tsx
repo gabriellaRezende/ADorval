@@ -2,7 +2,7 @@ export default function Footer() {
   return (
     <footer className="w-full border-t border-gray-100 mt-20">
       <div className="max-w-5xl mx-auto px-6 py-8 text-center text-sm text-gray-400">
-        © {new Date().getFullYear()} Nome da Profissional. Todos os direitos reservados.
+        © {new Date().getFullYear()} Ana Dorval. Todos os direitos reservados.
       </div>
     </footer>
   );
