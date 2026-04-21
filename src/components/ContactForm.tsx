@@ -2,14 +2,14 @@
 import { useState } from "react";
 import { Button } from "./ui/Button";
 
-const WPP_NUMBER = "5511999999999";
-const EMAIL = "email@profissional.com";
+const WPP_NUMBER = "+351932426003";
+const EMAIL = "anapaulaadorval@gmail.com";
 
 export default function ContactForm() {
   const [sent, setSent] = useState(false);
 
   async function handleSubmit(data: FormData) {
-    await fetch("https://formspree.io/f/YOUR_FORM_ID", {
+    await fetch("https://formspree.io/f/YOUR_FORM_ID", { 
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(Object.fromEntries(data)),
@@ -25,9 +25,10 @@ export default function ContactForm() {
             Local de atendimento
           </h3>
           <p className="text-noite leading-relaxed">
-            Rua Exemplo, 123 — Bairro<br />
-            Cidade — Estado<br />
-            Presencial e online
+            RoyalClinic<br />
+            Largo de São Sebastião da Pedreira 32B<br />
+            1050-205 - Lisboa<br />
+            Segunda a sexta, das 9h às 18h
           </p>
         </div>
 
@@ -41,7 +42,7 @@ export default function ContactForm() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-green-500 text-white px-5 py-2.5 rounded-pill text-sm font-medium hover:bg-green-600 transition"
           >
-            Chamar no WhatsApp
+            Marque sua sessão pelo WhatsApp
           </a>
         </div>
 
@@ -58,9 +59,9 @@ export default function ContactForm() {
         </div>
       </div>
 
-      <div className="border border-gelo rounded-card p-6">
-        <h3 className="text-lg font-semibold text-noite mb-1">Proposta de parceria</h3>
-        <p className="text-sm text-suave mb-6">Preencha e entrarei em contato.</p>
+      <div className="border border-noite rounded-card p-6">
+        <h3 className="text-lg font-semibold text-noite mb-1">Envie uma mensagem</h3>
+        <p className="text-sm text-suave mb-6">Caso prefire, deixe-me uma mensagem.</p>
 
         {sent ? (
           <p className="text-green-600 font-medium text-sm">
@@ -72,20 +73,20 @@ export default function ContactForm() {
             className="flex flex-col gap-4"
           >
             <div>
-              <label className="text-sm text-suave mb-1 block">Nome</label>
+              <label className="text-sm text-suave mb-1 block">Nome*</label>
               <input
                 name="nome"
                 required
-                className="w-full border border-gelo rounded-lg px-4 py-2.5 text-sm outline-none focus:border-ardosia transition"
-                placeholder="Seu nome"
+                className="w-full border border-noite rounded-lg px-4 py-2.5 text-sm outline-none focus:border-ardosia transition"
+                placeholder="Seu nome (campo obrigatório)"
               />
             </div>
             <div>
-              <label className="text-sm text-suave mb-1 block">Empresa / Organização</label>
+              <label className="text-sm text-suave mb-1 block">Assunto</label>
               <input
                 name="empresa"
-                className="w-full border border-gelo rounded-lg px-4 py-2.5 text-sm outline-none focus:border-ardosia transition"
-                placeholder="Opcional"
+                className="w-full border border-noite rounded-lg px-4 py-2.5 text-sm outline-none focus:border-ardosia transition"
+                placeholder="Assunto do contato"
               />
             </div>
             <div>
@@ -94,8 +95,8 @@ export default function ContactForm() {
                 name="mensagem"
                 required
                 rows={4}
-                className="w-full border border-gelo rounded-lg px-4 py-2.5 text-sm outline-none focus:border-ardosia transition resize-none"
-                placeholder="Conte sobre a parceria que tem em mente"
+                className="w-full border border-noite rounded-lg px-4 py-2.5 text-sm outline-none focus:border-ardosia transition resize-none"
+                placeholder="Conte sobre seu interesse"
               />
             </div>
             <Button type="submit" className="w-full justify-center py-2.5">

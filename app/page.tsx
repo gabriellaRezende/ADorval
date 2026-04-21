@@ -1,44 +1,48 @@
 import Image from "next/image";
 import ServiceCard from "@/src/components/ServiceCard";
 import ContactForm from "@/src/components/ContactForm";
+import FAQ from "@/src/components/FAQ";
 import { services } from "@/src/lib/services";
 
 export default function Home() {
   return (
     <>
       {/* ── HERO ── */}
-      <section id="home" className="relative w-full h-[90vh] min-h-[520px] flex items-center justify-center overflow-hidden bg-creme">
-        <Image
-          src="/foto-profissional.jpg"
-          alt="Foto da profissional"
-          fill
-          priority
-          className="object-cover object-top opacity-80"
-        />
-        <div className="absolute inset-0 bg-noite/30" />
-        <div className="relative z-10 text-center text-white px-6 max-w-2xl">
-          <p className="text-sm uppercase tracking-widest mb-3 opacity-80">
-            Massoterapeuta / Massagem Desportiva
-          </p>
-          <h1 className="text-4xl md:text-6xl font-semibold mb-6 leading-tight">
-            Ana Paula Dorval
-          </h1>
-          <p className="text-lg md:text-xl opacity-90 mb-8">
-            Aqui você encontra a paz e o cuidado que merece. Agende seu momento de bem-estar e relaxamento.
-          </p>
-          <div className="flex gap-4 justify-center flex-wrap">
-            <a
-              href="#servicos"
-              className="bg-white text-noite px-6 py-3 rounded-pill text-sm font-medium hover:bg-creme transition"
-            >
-              Ver serviços
-            </a>
+      <section
+        id="home"
+        className="mx-3 md:mx-6 rounded-3xl overflow-hidden bg-brand"
+      >
+        <div className="max-w-5xl mx-auto px-8 md:px-14 py-16 md:py-24 flex flex-col md:flex-row items-center gap-12 min-h-[70vh]">
+          {/* Text */}
+          <div className="flex-1 flex flex-col gap-6 text-white">
+            <p className="text-xs uppercase tracking-[0.3em] text-white/70">
+              Bem-vinda ao seu espaço de
+            </p>
+            <h1 className="font-display text-6xl md:text-8xl font-black uppercase leading-[0.9]">
+              Cuidado<br />&amp; Bem-estar
+            </h1>
+            <p className="text-xs uppercase tracking-[0.3em] text-white/70">
+              Com Ana Paula Dorval
+            </p>
             <a
               href="#contato"
-              className="border border-white text-white px-6 py-3 rounded-pill text-sm font-medium hover:bg-white/10 transition"
+              className="mt-2 border border-white/80 text-white px-8 py-3 text-xs tracking-[0.2em] uppercase w-fit hover:bg-white/10 transition-colors"
             >
-              Entrar em contato
+              Agendar Sessão
             </a>
+          </div>
+
+          {/* Oval image */}
+          <div className="flex-1 flex justify-center items-center">
+            <div className="relative w-60 md:w-80 aspect-[3/4] rounded-[50%] overflow-hidden ring-[10px] ring-bege/40">
+              <Image
+                src="/foto-profissional.jpg"
+                alt="Ana Paula Dorval"
+                fill
+                priority
+                className="object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -69,6 +73,9 @@ export default function Home() {
               Conheça as formas de atendimento e escolha o que melhor se encaixa
               para você.
             </p>
+            <p className="text-suave text-sm  font-light max-w-xl mx-auto mt-6">
+              A cada adicional de 30min, o valor aumenta em 15€.
+            </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((s) => (
@@ -77,23 +84,29 @@ export default function Home() {
                 name={s.name}
                 description={s.description}
                 price={s.price}
+                duration={s.duration}
               />
             ))}
           </div>
         </div>
       </section>
 
+      {/* ── FAQ ── */}
+      <FAQ />
+
       {/* ── CONTATO ── */}
-      <section id="contato" className="max-w-4xl mx-auto px-6 py-12 md:py-20">
-        <div className="mb-14 text-center">
-          <h2 className="text-3xl md:text-4xl font-semibold text-noite mb-4">
-            Contato
-          </h2>
-          <p className="text-suave text-lg">
-            Escolha a melhor forma de falar comigo.
-          </p>
+      <section id="servicos" className="bg-gelo">
+        <div className="max-w-5xl mx-auto px-6 py-12 md:py-20">
+          <div className="mb-14 text-center">
+            <h2 className="text-3xl md:text-4xl font-semibold text-noite mb-4">
+              Contato
+            </h2>
+            <p className="text-suave text-lg max-w-xl mx-auto">
+              Escolha a melhor forma de falar comigo.
+            </p>
+          </div>
+          <ContactForm />
         </div>
-        <ContactForm />
       </section>
     </>
   );
