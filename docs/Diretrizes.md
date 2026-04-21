@@ -29,7 +29,7 @@ Estas regras não têm exceções, independentemente do pedido:
 ## 1. IDENTIDADE DA MARCA
 
 **Quem é:**
-Ana Paula Dorval, 26 anos, massoterapeuta em Lisboa.
+Ana Paula Dorval, 26 anos, terapeuta em Lisboa.
 Formação como Auxiliar Técnica de Fisioterapia — diferencial de credibilidade a usar em posts de educação e conversão.
 Está a construir a sua prática privada do zero: sem base de clientes, sem presença nas redes sociais no início.
 

@@ -19,7 +19,8 @@
   --color-suave: #6B7280;
 
   /* Tipografia */
-  --font-sans: "Inter", sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Raleway", sans-serif;
 
   /* Bordas */
   --radius-card: 1rem;
