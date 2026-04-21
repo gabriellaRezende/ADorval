@@ -3,6 +3,14 @@ import ServiceCard from "@/src/components/ServiceCard";
 import ContactForm from "@/src/components/ContactForm";
 import FAQ from "@/src/components/FAQ";
 import { services } from "@/src/lib/services";
+import { Button } from "@/src/components/ui/Button";
+
+const links = [
+  { href: "#home", label: "Home" },
+  { href: "#sobre", label: "Sobre" },
+  { href: "#servicos", label: "Serviços" },
+  { href: "#contato", label: "Contato" },
+];
 
 export default function Home() {
   return (
@@ -10,31 +18,31 @@ export default function Home() {
       {/* ── HERO ── */}
       <section
         id="home"
-        className="mx-3 md:mx-6 rounded-3xl overflow-hidden bg-brand"
+        className="mx-3 md:mx-6 rounded-3xl overflow-hidden bg-lilas"
       >
         <div className="max-w-5xl mx-auto px-8 md:px-14 py-16 md:py-24 flex flex-col md:flex-row items-center gap-12 min-h-[70vh]">
           {/* Text */}
-          <div className="flex-1 flex flex-col gap-6 text-white">
-            <p className="text-xs uppercase tracking-[0.3em] text-white/70">
+          <div className="flex-1 flex flex-col gap-6 text-creme">
+            <p className="text-xs uppercase tracking-[0.3em] text-creme">
               Bem-vinda ao seu espaço de
             </p>
-            <h1 className="font-display text-6xl md:text-8xl font-black uppercase leading-[0.9]">
-              Cuidado<br />&amp; Bem-estar
+            <h1 className="font-sans text-6xl md:text-7xl font-black uppercase leading-[0.9]">
+              Cuidado<br /> &Bem-estar
             </h1>
-            <p className="text-xs uppercase tracking-[0.3em] text-white/70">
+            <p className="text-xs font-medium uppercase tracking-[0.3em] ">
               Com Ana Paula Dorval
             </p>
-            <a
-              href="#contato"
-              className="mt-2 border border-white/80 text-white px-8 py-3 text-xs tracking-[0.2em] uppercase w-fit hover:bg-white/10 transition-colors"
-            >
-              Agendar Sessão
-            </a>
+            <Button href="#contato" variant="ghost" size="sm" className="w-max">
+              Agende uma visita
+            </Button>
+            <Button href="#servicos" variant="outline" size="lg">
+              Conheça nossos serviços
+            </Button>
           </div>
 
           {/* Oval image */}
           <div className="flex-1 flex justify-center items-center">
-            <div className="relative w-60 md:w-80 aspect-[3/4] rounded-[50%] overflow-hidden ring-[10px] ring-bege/40">
+            <div className="relative w-60 md:w-90 aspect-[3/4] rounded-[50%] overflow-hidden ring-[6px] ring-bege/40">
               <Image
                 src="/foto-profissional.jpg"
                 alt="Ana Paula Dorval"
