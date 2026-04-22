@@ -12,7 +12,7 @@ export const services: Service[] = [
     name: "Massagem Desportiva",
     description:
       "Para atletas e quem treina com regularidade. Melhora a circulação, acelera a recuperação muscular e previne lesões. O teu corpo agradece antes e depois do esforço.",
-    price: "70€",
+    price: "sob consulta",
     duration: "60 min",
   },
   {

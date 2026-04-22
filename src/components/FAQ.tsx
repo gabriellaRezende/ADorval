@@ -24,39 +24,41 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="max-w-3xl mx-auto px-6 py-12 md:py-20">
-      <div className="text-center mb-12">
-        <h2 className="font-serif text-3xl md:text-4xl font-medium text-noite mb-3">
-          Dúvidas frequentes
-        </h2>
-        <span className="block w-12 h-1 bg-brand mx-auto rounded-full" />
-        <p className="font-sans text-suave text-lg mt-5">
-          Respostas objectivas para agendares com segurança.
-        </p>
-      </div>
+    <section id="faq" className="bg-lilas">
+      <div className="max-w-3xl mx-auto px-6 py-12 md:py-20">
+        <div className="text-center mb-12">
+          <h2 className="font-serif text-3xl md:text-4xl font-medium text-creme mb-3">
+            Dúvidas frequentes
+          </h2>
+          <span className="block w-12 h-px bg-bege mx-auto" />
+          <p className="font-sans text-creme/75 text-lg mt-5">
+            Respostas objectivas para agendares com segurança.
+          </p>
+        </div>
 
-      <div className="flex flex-col gap-3">
-        {faqs.map((faq, i) => (
-          <div
-            key={i}
-            className={`rounded-card border transition-colors ${
-              open === i ? "border-brand" : "border-gelo"
-            }`}
-          >
-            <button
-              className="w-full flex justify-between items-center px-6 py-4 text-left"
-              onClick={() => setOpen(open === i ? null : i)}
+        <div className="flex flex-col gap-3">
+          {faqs.map((faq, i) => (
+            <div
+              key={i}
+              className={`rounded-card border transition-colors bg-creme/10 ${
+                open === i ? "border-bege/60" : "border-creme/20"
+              }`}
             >
-              <span className="font-sans font-medium text-noite">{faq.q}</span>
-              <span className="text-brand text-xl font-light ml-4 shrink-0">
-                {open === i ? "−" : "+"}
-              </span>
-            </button>
-            {open === i && (
-              <p className="font-sans px-6 pb-5 text-suave leading-relaxed">{faq.a}</p>
-            )}
-          </div>
-        ))}
+              <button
+                className="w-full flex justify-between items-center px-6 py-4 text-left"
+                onClick={() => setOpen(open === i ? null : i)}
+              >
+                <span className="font-sans font-medium text-creme">{faq.q}</span>
+                <span className="text-bege text-xl font-light ml-4 shrink-0">
+                  {open === i ? "−" : "+"}
+                </span>
+              </button>
+              {open === i && (
+                <p className="font-sans px-6 pb-5 text-creme/80 leading-relaxed">{faq.a}</p>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
