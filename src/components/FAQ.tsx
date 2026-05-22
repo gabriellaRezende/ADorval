@@ -41,7 +41,7 @@ export default function FAQ() {
             <div
               key={i}
               className={`rounded-card border transition-colors bg-creme/10 ${
-                open === i ? "border-bege/60" : "border-creme/20"
+                open === i ? "border-creme" : "border-creme"
               }`}
             >
               <button
@@ -49,12 +49,12 @@ export default function FAQ() {
                 onClick={() => setOpen(open === i ? null : i)}
               >
                 <span className="font-sans font-medium text-creme">{faq.q}</span>
-                <span className="text-bege text-xl font-light ml-4 shrink-0">
+                <span className="text-creme text-xl font-light ml-4 shrink-0">
                   {open === i ? "−" : "+"}
                 </span>
               </button>
               {open === i && (
-                <p className="font-sans px-6 pb-5 text-creme/80 leading-relaxed">{faq.a}</p>
+                <p className="font-sans px-6 pb-5 text-creme leading-relaxed">{faq.a}</p>
               )}
             </div>
           ))}

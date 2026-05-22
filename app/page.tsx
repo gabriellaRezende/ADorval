@@ -11,38 +11,82 @@ export default function Home() {
       {/* ── HERO ── */}
       <section
         id="home"
-        className="mx-3 md:mx-6 rounded-3xl overflow-hidden bg-lilas"
+        className="mx-3 md:mx-6 rounded-3xl overflow-hidden relative"
+        style={{ minHeight: "85vh" }}
       >
-        <div className="max-w-5xl mx-auto px-8 md:px-14 py-16 md:py-24 flex flex-col md:flex-row items-center gap-12 min-h-[70vh]">
-          {/* Text */}
-          <div className="flex-1 flex flex-col gap-6 text-creme">
-            <p className="font-sans text-xs uppercase tracking-[0.3em] text-creme">
-              Bem-vinda ao teu espaço de
-            </p>
-            <h1 className="font-serif text-6xl md:text-7xl font-medium leading-[0.95]">
-              Cuidado<br />& Bem-estar
-            </h1>
-            <p className="font-sans text-xs font-medium uppercase tracking-[0.3em]">
-              Com Ana Paula Dorval
-            </p>
-            <Button href="#contato" variant="ghost" size="sm" className="w-max">
-              Fala comigo para agendar
-            </Button>
-            <Button href="#servicos" variant="outline" size="lg">
-              Conhece os serviços
-            </Button>
-          </div>
+        {/* Foto de fundo */}
+        <Image
+          src="/ana-paula-hero.jpg"
+          alt="Ana Paula Dorval — Massoterapia em Lisboa"
+          fill
+          priority
+          className="object-cover object-center"
+        />
 
-          {/* Oval image */}
-          <div className="flex-1 flex justify-center items-center">
-            <div className="relative w-60 md:w-90 aspect-[3/4] rounded-[50%] overflow-hidden ring-[6px] ring-bege/40">
-              <Image
-                src="/foto-profissional.jpg"
-                alt="Ana Paula Dorval"
-                fill
-                priority
-                className="object-cover"
-              />
+        {/* Overlay atmosférico: escuro à esquerda/baixo, transparente à direita/cima */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: [
+              "linear-gradient(to right, #2C3A52 0%, #2C3A52CC 28%, #2C3A5266 55%, transparent 78%)",
+              "linear-gradient(to top,   #2C3A52 0%, #2C3A5299 18%, transparent 45%)",
+            ].join(", "),
+          }}
+        />
+
+        {/* Textura de grão subtil para profundidade táctil */}
+        <div
+          className="absolute inset-0 pointer-events-none mix-blend-overlay opacity-25"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.78' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='260' height='260' filter='url(%23n)'/%3E%3C/svg%3E")`,
+            backgroundSize: "260px 260px",
+          }}
+        />
+
+        {/* Conteúdo — posicionamento editorial: canto inferior esquerdo */}
+        <div className="relative z-10 max-w-5xl mx-auto px-8 md:px-14 flex flex-col justify-end pb-14 md:pb-20" style={{ minHeight: "85vh" }}>
+          <div className="flex flex-col gap-5 text-creme max-w-lg">
+
+            {/* Eyebrow com traço decorativo */}
+            <div className="hero-animate hero-animate-1 flex items-center gap-3">
+              <span className="block w-7 h-px" style={{ background: "#C4956A" }} />
+              <p className="font-sans uppercase text-bege/75" style={{ fontSize: "0.62rem", letterSpacing: "0.42em" }}>
+                Bem-vinda ao teu espaço de
+              </p>
+            </div>
+
+            {/* Título principal */}
+            <h1
+              className="hero-animate hero-animate-2 font-serif font-medium"
+              style={{ fontSize: "clamp(3.4rem, 7.5vw, 6.5rem)", lineHeight: 0.88 }}
+            >
+              Cuidado<br />
+              <span style={{ color: "#E8C9A0" }}>&amp; Bem-estar</span>
+            </h1>
+
+            {/* Separador + nome */}
+            <div className="hero-animate hero-animate-3 flex items-center gap-4 pt-1">
+              <span className="block h-px" style={{ width: "2.5rem", background: "#C4956A", opacity: 0.5 }} />
+              <p
+                className="font-sans text-bege/55"
+                style={{ fontSize: "0.58rem", letterSpacing: "0.52em", textTransform: "uppercase" }}
+              >
+                Com Ana Paula Dorval
+              </p>
+            </div>
+
+            {/* CTAs */}
+            <div className="hero-animate hero-animate-4 flex flex-wrap gap-3 pt-2">
+              <Button href="#contato" variant="primary" size="lg">
+                Fala comigo para agendar
+              </Button>
+              <a
+                href="#servicos"
+                className="font-sans font-medium rounded-pill transition-colors text-creme/80 border border-creme/30 hover:bg-creme/10 hover:text-creme"
+                style={{ fontSize: "1rem", padding: "0.75rem 1.5rem" }}
+              >
+                Conhece os serviços
+              </a>
             </div>
           </div>
         </div>

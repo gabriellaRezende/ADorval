@@ -4,6 +4,7 @@ import { Button } from "./ui/Button";
 
 const WPP_NUMBER = "+351932426003";
 const EMAIL = "anapaulaadorval@gmail.com";
+const INSTAGRAM = "@anaadorval";
 
 export default function ContactForm() {
   const [sent, setSent] = useState(false);
@@ -57,6 +58,18 @@ export default function ContactForm() {
             {EMAIL}
           </a>
         </div>
+
+        <div>
+          <h3 className="font-sans text-sm font-medium text-ardosia uppercase tracking-widest mb-2">
+            Instagram
+          </h3>
+          <a
+            href={`https://www.instagram.com/anaadorval/`}
+            className="font-sans text-noite hover:text-brand transition underline underline-offset-4"
+          >
+            {INSTAGRAM}
+          </a>
+        </div>
       </div>
 
       <div className="border border-gelo rounded-card p-6">
@@ -77,7 +90,7 @@ export default function ContactForm() {
               <input
                 name="nome"
                 required
-                className="w-full border border-gelo rounded-lg px-4 py-2.5 text-sm outline-none focus:border-ardosia transition"
+                className="w-full border border-ardosia rounded-lg px-4 py-2.5 text-sm outline-none focus:border-ardosia transition"
                 placeholder="O teu nome"
               />
             </div>
@@ -85,7 +98,7 @@ export default function ContactForm() {
               <label className="font-sans text-sm text-suave mb-1 block">Assunto</label>
               <input
                 name="assunto"
-                className="w-full border border-gelo rounded-lg px-4 py-2.5 text-sm outline-none focus:border-ardosia transition"
+                className="w-full border border-ardosia rounded-lg px-4 py-2.5 text-sm outline-none focus:border-ardosia transition"
                 placeholder="Assunto da mensagem"
               />
             </div>
@@ -95,7 +108,7 @@ export default function ContactForm() {
                 name="mensagem"
                 required
                 rows={4}
-                className="w-full border border-gelo rounded-lg px-4 py-2.5 text-sm outline-none focus:border-ardosia transition resize-none"
+                className="w-full border border-ardosia rounded-lg px-4 py-2.5 text-sm outline-none focus:border-ardosia transition resize-none"
                 placeholder="Conta-me o que precisas"
               />
             </div>
