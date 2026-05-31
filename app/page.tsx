@@ -71,21 +71,21 @@ export default function Home() {
                 className="font-sans text-bege/55"
                 style={{ fontSize: "0.58rem", letterSpacing: "0.52em", textTransform: "uppercase" }}
               >
-                Com Ana Paula Dorval
+                Com Ana Dorval
               </p>
             </div>
 
             {/* CTAs */}
             <div className="hero-animate hero-animate-4 flex flex-wrap gap-3 pt-2">
               <Button href="#contato" variant="primary" size="lg">
-                Fala comigo para agendar
+                Agendar sessão
               </Button>
               <a
                 href="#servicos"
                 className="font-sans font-medium rounded-pill transition-colors text-creme/80 border border-creme/30 hover:bg-creme/10 hover:text-creme"
                 style={{ fontSize: "1rem", padding: "0.75rem 1.5rem" }}
               >
-                Conhece os serviços
+                Conheça os serviços
               </a>
             </div>
           </div>
@@ -95,16 +95,10 @@ export default function Home() {
       {/* ── SOBRE ── */}
       <section id="sobre" className="max-w-3xl mx-auto px-6 py-14 md:py-24 text-center">
         <h2 className="font-serif text-3xl md:text-4xl font-medium mb-2 text-noite">
-          Bem-vinda ao meu espaço.
+          Muito prazer, Ana Dorval!
         </h2>
-        <h3 className="font-sans text-xl font-normal mb-6 text-suave">
-          Chamo-me Ana Paula Dorval.
-        </h3>
         <p className="font-sans text-suave text-lg leading-relaxed">
-          Sou massoterapeuta em Lisboa, com formação como Auxiliar Técnica de Fisioterapia.
-          O que me diferencia não é só a técnica — é a atenção a quem está à minha frente.
-          Cada sessão é adaptada ao teu momento: ao que o teu corpo precisa, ao que estás a sentir.
-          Cuido de ti com seriedade e com calor humano, porque acredito que os dois andam sempre juntos.
+          Sou massoterapeuta com formação técnica em fisioterapia e experiência em contextos de spa e desporto. O que me move é a atenção genuína a quem está à minha frente — cada sessão é dedicada ao teu bem-estar, com técnica e com presença.
         </p>
       </section>
 
@@ -115,12 +109,6 @@ export default function Home() {
             <h2 className="font-serif text-3xl md:text-4xl font-medium text-noite mb-4">
               Serviços
             </h2>
-            <p className="font-sans text-suave text-lg max-w-xl mx-auto">
-              Escolhe o que melhor se encaixa para ti.
-            </p>
-            <p className="font-sans text-suave text-sm font-light max-w-xl mx-auto mt-4">
-              A cada adicional de 30 min, o valor aumenta em 15€.
-            </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((s) => (
@@ -128,6 +116,7 @@ export default function Home() {
                 key={s.id}
                 name={s.name}
                 description={s.description}
+                details={s.details}
                 price={s.price}
                 duration={s.duration}
               />
@@ -136,11 +125,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── FAQ ── */}
-      <FAQ />
 
       {/* ── CONTATO ── */}
-      <section id="contato" className="bg-gelo">
+      <section id="contato" className="">
         <div className="max-w-5xl mx-auto px-6 py-12 md:py-20">
           <div className="mb-14 text-center">
             <h2 className="font-serif text-3xl md:text-4xl font-medium text-noite mb-4">

@@ -5,6 +5,7 @@ import { Button } from "./ui/Button";
 const WPP_NUMBER = "+351932426003";
 const EMAIL = "anapaulaadorval@gmail.com";
 const INSTAGRAM = "@anaadorval";
+const ADDRESS= "RoyalClinic"
 
 export default function ContactForm() {
   const [sent, setSent] = useState(false);
@@ -26,7 +27,7 @@ export default function ContactForm() {
             Local
           </h3>
           <p className="font-sans text-noite leading-relaxed">
-            RoyalClinic<br />
+            <a href= "https://maps.app.goo.gl/8yad5691zRM2Ckoa8" target="_blank" rel="noopener noreferrer"> {ADDRESS} </a> <br />
             Largo de São Sebastião da Pedreira 32B<br />
             1050-205 — Lisboa<br />
             Segunda a sexta, das 9h às 18h
