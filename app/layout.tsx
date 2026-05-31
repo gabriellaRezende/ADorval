@@ -17,7 +17,7 @@ const raleway = Raleway({
 });
 
 export const metadata: Metadata = {
-  title: "Ana Paula Dorval — Massoterapeuta Lisboa",
+  title: "Ana Dorval — Massoterapeuta Lisboa",
   description:
     "Massoterapeuta em Lisboa com formação como Auxiliar Técnica de Fisioterapia. Massagem desportiva, terapêutica, drenagem linfática e mais. Agenda a tua sessão.",
  
