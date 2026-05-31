@@ -11,7 +11,7 @@ export default function ContactForm() {
   const [sent, setSent] = useState(false);
 
   async function handleSubmit(data: FormData) {
-    await fetch("https://formspree.io/f/YOUR_FORM_ID", {
+    await fetch("https://formspree.io/f/xwvzjzpk", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(Object.fromEntries(data)),
@@ -93,6 +93,16 @@ export default function ContactForm() {
                 required
                 className="w-full border border-ardosia rounded-lg px-4 py-2.5 text-sm outline-none focus:border-ardosia transition"
                 placeholder="O teu nome"
+              />
+            </div>
+            <div>
+              <label className="font-sans text-sm text-suave mb-1 block">Email*</label>
+              <input
+                name="email"
+                type="email"
+                required
+                className="w-full border border-ardosia rounded-lg px-4 py-2.5 text-sm outline-none focus:border-ardosia transition"
+                placeholder="O teu email"
               />
             </div>
             <div>
